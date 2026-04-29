@@ -24,7 +24,7 @@ const submissionSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// ✅ Prevent duplicate submissions (same student, same assignment)
+// Prevent duplicate submissions 
 submissionSchema.index({ studentName: 1, assignmentId: 1 }, { unique: true });
 
 module.exports = mongoose.model("Submission", submissionSchema);

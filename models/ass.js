@@ -29,7 +29,7 @@ const assignmentSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// ✅ REPLACE WITH THIS
+
 assignmentSchema.pre("save", function () {
   if (this.isNew && this.dueDate < new Date()) {
     throw new Error("Due date must be in the future");
